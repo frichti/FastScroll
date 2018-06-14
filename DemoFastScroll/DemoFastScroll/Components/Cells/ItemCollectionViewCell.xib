@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCollectionViewCell" id="dEF-6Q-adU" customClass="ItemCollectionViewCell" customModule="DemoFastScroll" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XH-1I-Qdg" userLabel="Title Label">
+                        <rect key="frame" x="90" y="10" width="241" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.23161272321428572" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact" translatesAutoresizingMaskIntoConstraints="NO" id="DFp-PC-1P8">
+                        <rect key="frame" x="20" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="N4W-2Z-rRu"/>
+                            <constraint firstAttribute="height" constant="50" id="cBJ-sB-P6a"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8XH-1I-Qdg" secondAttribute="trailing" constant="10" id="853-d0-yzY"/>
+                <constraint firstAttribute="bottom" secondItem="8XH-1I-Qdg" secondAttribute="bottom" constant="10" id="CfK-Fx-XWf"/>
+                <constraint firstItem="8XH-1I-Qdg" firstAttribute="leading" secondItem="DFp-PC-1P8" secondAttribute="trailing" constant="20" id="LBc-z0-u2n"/>
+                <constraint firstItem="DFp-PC-1P8" firstAttribute="top" secondItem="dEF-6Q-adU" secondAttribute="top" constant="10" id="U5g-0K-e96"/>
+                <constraint firstItem="DFp-PC-1P8" firstAttribute="leading" secondItem="dEF-6Q-adU" secondAttribute="leading" constant="20" id="lJ1-8L-bcp"/>
+                <constraint firstAttribute="bottom" secondItem="DFp-PC-1P8" secondAttribute="bottom" constant="10" id="odI-kx-4Jh"/>
+                <constraint firstItem="8XH-1I-Qdg" firstAttribute="top" secondItem="dEF-6Q-adU" secondAttribute="top" constant="10" id="ylW-es-nT2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="qFu-J9-abJ"/>
+            <size key="customSize" width="341" height="67"/>
+            <connections>
+                <outlet property="titleLabel" destination="8XH-1I-Qdg" id="Axt-w3-vDC"/>
+            </connections>
+            <point key="canvasLocation" x="68.5" y="-141.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="contact" width="131" height="130"/>
+    </resources>
+</document>
