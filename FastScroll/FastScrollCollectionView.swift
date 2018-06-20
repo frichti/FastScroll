@@ -122,6 +122,8 @@ open class FastScrollCollectionView: UICollectionView {
         
         //hide
         handle!.alpha = 0.0
+        handle!.isHidden = true
+        gestureHandleView!.isHidden = true
         
         //position
         positionHandle(scrollbarMarginTop)
@@ -169,17 +171,25 @@ open class FastScrollCollectionView: UICollectionView {
         scrollbar!.backgroundColor = scrollbarColor
         scrollbar!.layer.cornerRadius = scrollbarRadius
         scrollbar!.alpha = 0.0
+        scrollbar!.isHidden = true
     }
     
     // MARK: Helpers
     @objc func hideHandle() {
-        guard let handle = handle, let scrollbar = scrollbar else {
+        guard let handle = handle, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView else {
             return
         }
+        
+        gestureHandleView.isHidden = true
         
         UIView.animate(withDuration: TimeInterval(handleDisappearAnimationDuration), animations: {
             handle.alpha = 0.0
             scrollbar.alpha = 0.0
+        }, completion: { finished in
+            if finished {
+                handle.isHidden = true
+                scrollbar.isHidden = true
+            }
         })
     }
     
@@ -219,7 +229,7 @@ open class FastScrollCollectionView: UICollectionView {
     }
     
     @objc func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
-        guard let superview = superview, let bubble = bubble, let handle = handle, let handleTimer = handleTimer, let scrollbar = scrollbar else {
+        guard let superview = superview, let bubble = bubble, let handle = handle, let handleTimer = handleTimer, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView  else {
             return
         }
         
@@ -236,6 +246,9 @@ open class FastScrollCollectionView: UICollectionView {
             handleTimer.invalidate()
             handle.alpha = 1.0
             scrollbar.alpha = 1.0
+            handle.isHidden = false
+            scrollbar.isHidden = false
+            gestureHandleView.isHidden = false
         }
         
         if panGesture.state == UIGestureRecognizerState.ended {
@@ -249,6 +262,9 @@ open class FastScrollCollectionView: UICollectionView {
             handleTimer.invalidate()
             handle.alpha = 1.0
             scrollbar.alpha = 1.0
+            handle.isHidden = false
+            scrollbar.isHidden = false
+            gestureHandleView.isHidden = false
         }
         
         // views positions
@@ -299,12 +315,15 @@ open class FastScrollCollectionView: UICollectionView {
 
 extension FastScrollCollectionView {
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        guard let handle = handle, let scrollbar = scrollbar else {
+        guard let handle = handle, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView else {
             return
         }
         
         handle.alpha = 1.0
         scrollbar.alpha = 1.0
+        handle.isHidden = false
+        scrollbar.isHidden = false
+        gestureHandleView.isHidden = false
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
