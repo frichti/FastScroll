@@ -229,7 +229,7 @@ open class FastScrollCollectionView: UICollectionView {
     }
     
     @objc func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
-        guard let superview = superview, let bubble = bubble, let handle = handle, let handleTimer = handleTimer, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView  else {
+        guard let superview = superview, let bubble = bubble, let handle = handle, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView  else {
             return
         }
         
@@ -243,7 +243,10 @@ open class FastScrollCollectionView: UICollectionView {
             handleTouched = true
             
             //invalid hide timer
-            handleTimer.invalidate()
+            if let handleTimer = handleTimer {
+                handleTimer.invalidate()
+            }
+            
             handle.alpha = 1.0
             scrollbar.alpha = 1.0
             handle.isHidden = false
@@ -259,7 +262,10 @@ open class FastScrollCollectionView: UICollectionView {
         
         if panGesture.state == UIGestureRecognizerState.changed {
             //invalid hide timer
-            handleTimer.invalidate()
+            if let handleTimer = handleTimer {
+                handleTimer.invalidate()
+            }
+            
             handle.alpha = 1.0
             scrollbar.alpha = 1.0
             handle.isHidden = false
