@@ -35,7 +35,7 @@ extension DemoLargeBubbleCollectionViewController {
         
         //bubble
         collectionView.bubbleTextSize = 14.0
-        collectionView.bubbleMarginRight = 80.0
+        collectionView.bubbleMarginRight = 60.0
         collectionView.bubbleColor = UIColor(red: 38.0 / 255.0, green: 48.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0)
         
         //handle

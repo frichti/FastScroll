@@ -30,7 +30,6 @@ open class FastScrollCollectionView: UICollectionView {
     public var bubbleShadowOpacity: Float = 0.7
     public var bubbleShadowRadius: CGFloat = 3.0
     public var bubbleShadowOffset: CGSize = CGSize(width: 0.0, height: 5.0)
-    public var bubbleNumberOfLines: Int = 1
     public var bubbleFocus: BubbleFocus = .first
     
     // Handler to scroll
@@ -47,7 +46,7 @@ open class FastScrollCollectionView: UICollectionView {
     public var handleColor: UIColor = UIColor.darkGray
     public var handleTimeToDisappear: CGFloat = 1.5
     public var handleDisappearAnimationDuration: CGFloat = 0.2
-    public var handleTouched: Bool = false
+    fileprivate var handleTouched: Bool = false
     
     // Gesture center on handler
     public var gestureHandleView: UIView?
@@ -84,9 +83,27 @@ open class FastScrollCollectionView: UICollectionView {
     }
     
     public func setup() {
+        cleanViews()
+        
         setupScrollbar()
         setupHandle()
         setupBubble()
+    }
+    
+    public func cleanViews() {
+        guard let bubble = bubble, let handle = handle, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView else {
+            return
+        }
+        
+        bubble.removeFromSuperview()
+        handle.removeFromSuperview()
+        scrollbar.removeFromSuperview()
+        gestureHandleView.removeFromSuperview()
+        
+        self.bubble = nil
+        self.handle = nil
+        self.scrollbar = nil
+        self.gestureHandleView = nil
     }
     
     fileprivate func setupHandle() {

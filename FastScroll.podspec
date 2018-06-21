@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "FastScroll"
-  spec.version = "1.0.3"
+  spec.version = "1.1.0"
   spec.summary = "Framework to create a fast scroller on your collection view."
   spec.homepage = "https://github.com/frichti/FastScroll"
   spec.license = { type: 'MIT', file: 'LICENSE' }
