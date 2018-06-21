@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -229,6 +230,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAf-vV-1cq" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-127" y="1686"/>
+        </scene>
+        <!--TableView-->
+        <scene sceneID="rRU-o4-XhK">
+            <objects>
+                <viewController id="ehR-SX-vdD" customClass="DemoTableViewController" customModule="DemoFastScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J1a-QU-mzT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gvx-sH-unu" customClass="FastScrollTableView" customModule="DemoFastScroll" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gvx-sH-unu" firstAttribute="top" secondItem="PhY-vV-xfd" secondAttribute="top" id="YaA-sF-CKc"/>
+                            <constraint firstItem="gvx-sH-unu" firstAttribute="leading" secondItem="PhY-vV-xfd" secondAttribute="leading" id="iFf-hQ-d4p"/>
+                            <constraint firstItem="PhY-vV-xfd" firstAttribute="bottom" secondItem="gvx-sH-unu" secondAttribute="bottom" id="lF0-yC-70P"/>
+                            <constraint firstItem="PhY-vV-xfd" firstAttribute="trailing" secondItem="gvx-sH-unu" secondAttribute="trailing" id="pNp-C1-6kR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PhY-vV-xfd"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="TableView" id="thZ-Sf-Xbi"/>
+                    <connections>
+                        <outlet property="tableView" destination="gvx-sH-unu" id="TBq-GG-7Il"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lo5-09-IQj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="2418"/>
         </scene>
     </scenes>
     <resources>

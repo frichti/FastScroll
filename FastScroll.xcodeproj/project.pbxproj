@@ -11,6 +11,7 @@
 		BDC01AC320D29A39007CD19A /* FastScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC01AB920D29A39007CD19A /* FastScroll.framework */; };
 		BDC01AC820D29A39007CD19A /* FastScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC01AC720D29A39007CD19A /* FastScrollTests.swift */; };
 		BDC01ACA20D29A39007CD19A /* FastScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = BDC01ABC20D29A39007CD19A /* FastScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDE7FCEA20DB9B7D00C267CA /* FastScrollTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7FCE920DB9B7D00C267CA /* FastScrollTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		BDC01AC220D29A39007CD19A /* FastScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC01AC720D29A39007CD19A /* FastScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastScrollTests.swift; sourceTree = "<group>"; };
 		BDC01AC920D29A39007CD19A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDE7FCE920DB9B7D00C267CA /* FastScrollTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastScrollTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				BDC01ABC20D29A39007CD19A /* FastScroll.h */,
 				BDC01ABD20D29A39007CD19A /* Info.plist */,
 				BD86B25D20D3B773005735EE /* FastScrollCollectionView.swift */,
+				BDE7FCE920DB9B7D00C267CA /* FastScrollTableView.swift */,
 			);
 			path = FastScroll;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE7FCEA20DB9B7D00C267CA /* FastScrollTableView.swift in Sources */,
 				BD86B25E20D3B773005735EE /* FastScrollCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

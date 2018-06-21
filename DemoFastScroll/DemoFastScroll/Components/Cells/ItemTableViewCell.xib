@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" id="oW6-mZ-NEj" customClass="ItemTableViewCell" customModule="DemoFastScroll" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oW6-mZ-NEj" id="cdo-0F-oMi">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-lE-rWY" userLabel="Title Label">
+                        <rect key="frame" x="98" y="22" width="48" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.23161272320000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact" translatesAutoresizingMaskIntoConstraints="NO" id="th5-Pc-RvF">
+                        <rect key="frame" x="28" y="9" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="FtN-Qg-peb"/>
+                            <constraint firstAttribute="width" constant="50" id="JJH-Gq-BnH"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="th5-Pc-RvF" firstAttribute="centerY" secondItem="cdo-0F-oMi" secondAttribute="centerY" id="6GH-L3-KEX"/>
+                    <constraint firstItem="th5-Pc-RvF" firstAttribute="leading" secondItem="cdo-0F-oMi" secondAttribute="leadingMargin" constant="20" id="gT5-du-yju"/>
+                    <constraint firstItem="h5b-lE-rWY" firstAttribute="centerY" secondItem="cdo-0F-oMi" secondAttribute="centerY" id="tpc-ti-nU6"/>
+                    <constraint firstItem="h5b-lE-rWY" firstAttribute="leading" secondItem="th5-Pc-RvF" secondAttribute="trailing" constant="20" id="w4M-Ci-fd4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="h5b-lE-rWY" id="0EU-bn-ifW"/>
+            </connections>
+            <point key="canvasLocation" x="-272" y="739"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="contact" width="131" height="130"/>
+    </resources>
+</document>

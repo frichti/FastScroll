@@ -1,5 +1,5 @@
 //
-//  FastScrollCollectionView.swift
+//  FastScrollTableView.swift
 //  FastScroll
 //
 //  Created by Arsene Huot on 15/06/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class FastScrollCollectionView: UICollectionView {
+open class FastScrollTableView: UITableView {
     public enum BubbleFocus {
         case first
         case last
@@ -319,7 +319,7 @@ open class FastScrollCollectionView: UICollectionView {
 
 // MARK: Scroll Management
 
-extension FastScrollCollectionView {
+extension FastScrollTableView {
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         guard let handle = handle, let scrollbar = scrollbar, let gestureHandleView = gestureHandleView else {
             return
@@ -366,4 +366,5 @@ extension FastScrollCollectionView {
         updateBubblePosition()
     }
 }
+
 

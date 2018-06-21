@@ -28,6 +28,11 @@
 		BD86B2CD20D92B96005735EE /* DemoDefaultCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD86B2CC20D92B95005735EE /* DemoDefaultCollectionViewController.swift */; };
 		BD86B2CF20D940AC005735EE /* DemoNoBubbleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD86B2CE20D940AC005735EE /* DemoNoBubbleCollectionViewController.swift */; };
 		BD86B2D120D940EA005735EE /* DemoLargeBubbleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD86B2D020D940EA005735EE /* DemoLargeBubbleCollectionViewController.swift */; };
+		BDE7FCEF20DB9C5000C267CA /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7FCEE20DB9C5000C267CA /* DemoTableViewController.swift */; };
+		BDE7FCF120DB9CB300C267CA /* FastScrollTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7FCF020DB9CB300C267CA /* FastScrollTableView.swift */; };
+		BDE7FCF220DB9CB800C267CA /* FastScrollTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7FCF020DB9CB300C267CA /* FastScrollTableView.swift */; };
+		BDE7FCF420DB9EC800C267CA /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7FCF320DB9EC800C267CA /* ItemTableViewCell.swift */; };
+		BDE7FCF620DB9ED000C267CA /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7FCF520DB9ED000C267CA /* ItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,10 @@
 		BD86B2CC20D92B95005735EE /* DemoDefaultCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDefaultCollectionViewController.swift; sourceTree = "<group>"; };
 		BD86B2CE20D940AC005735EE /* DemoNoBubbleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNoBubbleCollectionViewController.swift; sourceTree = "<group>"; };
 		BD86B2D020D940EA005735EE /* DemoLargeBubbleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLargeBubbleCollectionViewController.swift; sourceTree = "<group>"; };
+		BDE7FCEE20DB9C5000C267CA /* DemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		BDE7FCF020DB9CB300C267CA /* FastScrollTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FastScrollTableView.swift; path = ../FastScroll/FastScrollTableView.swift; sourceTree = "<group>"; };
+		BDE7FCF320DB9EC800C267CA /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		BDE7FCF520DB9ED000C267CA /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +110,7 @@
 		BD79A82220D2A869000BD71C = {
 			isa = PBXGroup;
 			children = (
+				BDE7FCF020DB9CB300C267CA /* FastScrollTableView.swift */,
 				BD86B26320D3B7FD005735EE /* FastScrollCollectionView.swift */,
 				BD79A82D20D2A869000BD71C /* DemoFastScroll */,
 				BD79A87820D2ADC1000BD71C /* FastScroll */,
@@ -153,6 +163,7 @@
 		BD79A88420D2B554000BD71C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BDE7FCED20DB9C3B00C267CA /* TableView */,
 				BD79A88520D2B572000BD71C /* CollectionView */,
 			);
 			path = "View Controllers";
@@ -184,6 +195,8 @@
 			children = (
 				BD79A88C20D2BD75000BD71C /* ItemCollectionViewCell.swift */,
 				BD79A88E20D2BE07000BD71C /* ItemCollectionViewCell.xib */,
+				BDE7FCF320DB9EC800C267CA /* ItemTableViewCell.swift */,
+				BDE7FCF520DB9ED000C267CA /* ItemTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -212,6 +225,14 @@
 				BD86B2C820D8F338005735EE /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BDE7FCED20DB9C3B00C267CA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BDE7FCEE20DB9C5000C267CA /* DemoTableViewController.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +334,7 @@
 				BD86B24F20D2CEBC005735EE /* SectionView.xib in Resources */,
 				BD79A88F20D2BE07000BD71C /* ItemCollectionViewCell.xib in Resources */,
 				BD79A83620D2A869000BD71C /* Assets.xcassets in Resources */,
+				BDE7FCF620DB9ED000C267CA /* ItemTableViewCell.xib in Resources */,
 				BD79A83420D2A869000BD71C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,13 +353,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE7FCF120DB9CB300C267CA /* FastScrollTableView.swift in Sources */,
 				BD86B2CB20D927CB005735EE /* DemoImageCollectionViewController.swift in Sources */,
 				BD86B2CF20D940AC005735EE /* DemoNoBubbleCollectionViewController.swift in Sources */,
 				BD86B26420D3B7FD005735EE /* FastScrollCollectionView.swift in Sources */,
 				BD79A88D20D2BD75000BD71C /* ItemCollectionViewCell.swift in Sources */,
 				BD79A83120D2A869000BD71C /* DemoCollectionViewController.swift in Sources */,
 				BD86B25120D2CF89005735EE /* SectionView.swift in Sources */,
+				BDE7FCF420DB9EC800C267CA /* ItemTableViewCell.swift in Sources */,
 				BD86B2CD20D92B96005735EE /* DemoDefaultCollectionViewController.swift in Sources */,
+				BDE7FCEF20DB9C5000C267CA /* DemoTableViewController.swift in Sources */,
 				BD79A88A20D2B7FC000BD71C /* Section.swift in Sources */,
 				BD79A88820D2B7EF000BD71C /* Item.swift in Sources */,
 				BD86B2D120D940EA005735EE /* DemoLargeBubbleCollectionViewController.swift in Sources */,
@@ -350,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE7FCF220DB9CB800C267CA /* FastScrollTableView.swift in Sources */,
 				BD86B26520D3C1BA005735EE /* FastScrollCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
