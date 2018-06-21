@@ -41,26 +41,26 @@ import FastScroll
 ![cell](https://raw.githubusercontent.com/Frichti/FastScroll/master/images/storyboard_class.png)
 
 ##### 3) Adding your colletionView outlet
-  `@IBOutlet weak var collectionView | FastScrollCollectionView!`  
+  `@IBOutlet weak var collectionView : FastScrollCollectionView!`  
 
 ##### 4) Implement UIScrollViewDelegate to dispatch the scroll behavior to your FastScrollCollectionView
 
 ``` swift
-extension DemoFastScrollCollectionViewController | UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView | UIScrollView) {
+extension DemoFastScrollCollectionViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView : UIScrollView) {
         collectionView.scrollViewDidScroll(scrollView)
     }
     
-    func scrollViewWillBeginDragging(_ scrollView | UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView : UIScrollView) {
         collectionView.scrollViewWillBeginDragging(scrollView)
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView | UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView : UIScrollView) {
         collectionView.scrollViewDidEndDecelerating(scrollView)
     }
     
-    func scrollViewDidEndDragging(_ scrollView | UIScrollView, willDecelerate decelerate | Bool) {
-        collectionView.scrollViewDidEndDragging(scrollView, willDecelerate | decelerate)
+    func scrollViewDidEndDragging(_ scrollView : UIScrollView, willDecelerate decelerate : Bool) {
+        collectionView.scrollViewDidEndDragging(scrollView, willDecelerate : decelerate)
     }
 }
 ```
@@ -69,12 +69,12 @@ extension DemoFastScrollCollectionViewController | UIScrollViewDelegate {
   
 ``` swift
 fileprivate func configFastScroll() {
-    collectionView.delegate | self
-    collectionView.dataSource | self
-
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    
     //callback action to display bubble name
-    collectionView.bubbleNameForIndexPath | { indexPath in
-        let visibleSection | Section | self.data[indexPath.section]
+    collectionView.bubbleNameForIndexPath = { indexPath in
+        let visibleSection: Section = self.data[indexPath.section]
         return visibleSection.sectionTitle
     }
 }
@@ -85,31 +85,31 @@ You can easily customize what you want.
 You should make the config in `viewDidLoad` otherwise you'll need to call `collectionView.setup()` to refresh fast scroll views
 ``` swift
 fileprivate func configFastScroll() {
-    collectionView.delegate | self
-    collectionView.dataSource | self
+    collectionView.delegate = self
+    collectionView.dataSource = self
     
     //bubble
-    collectionView.bubbleTextSize | 14.0
-    collectionView.bubbleMarginRight | 80.0
-    collectionView.bubbleColor | UIColor(red | 38.0 / 255.0, green | 48.0 / 255.0, blue | 60.0 / 255.0, alpha | 1.0)
+    collectionView.bubbleFocus = .dynamic
+    collectionView.bubbleTextSize = 14.0
+    collectionView.bubbleMarginRight = 50.0
+    collectionView.bubbleColor = UIColor(red: 38.0 / 255.0, green: 48.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0)
     
     //handle
-    collectionView.handleImage | UIImage.init(named | "cursor")
-    collectionView.handleHeight | 40.0
-    collectionView.handleWidth | 44.0
-    collectionView.handleRadius | 0.0
-    collectionView.handleMarginRight | 0
-    collectionView.handleColor | UIColor.clear
+    collectionView.handleHeight = 40.0
+    collectionView.handleWidth = 40.0
+    collectionView.handleRadius = 20.0
+    collectionView.handleMarginRight = -20
+    collectionView.handleColor = UIColor(red: 38.0 / 255.0, green: 48.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0)
     
     //scrollbar
-    collectionView.scrollbarWidth | 0.0
-    collectionView.scrollbarMarginTop | 20.0
-    collectionView.scrollbarMarginBottom | 0.0
-    collectionView.scrollbarMarginRight | 10.0
-
+    collectionView.scrollbarWidth = 0.0
+    collectionView.scrollbarMarginTop = 20.0
+    collectionView.scrollbarMarginBottom = 0.0
+    collectionView.scrollbarMarginRight = 10.0
+    
     //callback action to display bubble name
-    collectionView.bubbleNameForIndexPath | { indexPath in
-        let visibleSection | Section | self.data[indexPath.section]
+    collectionView.bubbleNameForIndexPath = { indexPath in
+        let visibleSection: Section = self.data[indexPath.section]
         return visibleSection.sectionTitle
     }
 }
